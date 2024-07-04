@@ -1,0 +1,13 @@
+.post-all-container {
+    position: relative;
+}
+.post-header-btns > div {
+    display: flex;
+    gap: 6px;
+}
+@media screen and (max-width: 860px) {
+    .post-header-btns {
+        flex-direction: column;
+        align-items: end;
+    }
+}

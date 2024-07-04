@@ -1,0 +1,146 @@
+.answer {
+    position: relative;
+    padding: 16px 16px 16px 60px;
+    border-radius: 10px;
+}
+
+.answer > .img {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+.answer > .img > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.answer > .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 4px;
+}
+
+.answer > .header > .left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.answer > .header > .right {
+    display: flex;
+    gap: 10px;
+}
+
+.answer > .upload-img {
+    box-sizing: border-box;
+    width: fit-content;
+}
+
+.answer > .upload-img > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.answer > .contents > p {
+    text-align: justify;
+}
+
+.answer > .body {
+    margin-bottom: 15px;
+}
+
+.answer > .likes {
+    font-size: 1.1rem;
+}
+
+.answer-input {
+    padding: 16px;
+}
+
+.answer-input > .header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 10px;
+}
+
+.answer-input > .header > .img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.answer-input > .header > .img > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.answer-input > .header > .img > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.answer-input > .body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.answer-input > .body > div {
+    width: 100%;
+}
+
+.answer-input > .body > div > textarea {
+    width: 100%;
+    border: 1px solid #28a745;
+    border-radius: 8px;
+    padding: 10px;
+    outline: none;
+}
+
+.answer-input > .body > button {
+    white-space: nowrap;
+    border: none;
+}
+
+.answer-input > .body > .img-container > .img > img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.answer > .update-button {
+    cursor: pointer;
+}
+
+.answer > .delete-button {
+    cursor: pointer;
+}
+
+.answer > .likes {
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 768px) {
+    .answer-input { padding: 0; }
+}
+
+@media screen and (max-width: 540px) {
+    .qna-detail-q-container { margin: 10px 4px; padding: 20px 14px; }
+    .qna-detail-q-container > .title { font-size: 22px; text-align: center; }
+    .detail-page-user-container > .author { padding: 10px 0; }
+    .answer { padding: 16px 6px 16px 40px; }
+    .answer > .img { left: 0px; }
+}

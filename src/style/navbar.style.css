@@ -1,0 +1,99 @@
+.nav-header {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 50px;
+    border-bottom: 1px solid #eee;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-icon:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 50%;
+    background-color: black;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-icon:hover:not(:last-child)::after {
+    width: 100%;
+    left: 0;
+}
+
+
+.nav-logo {
+    cursor: pointer;
+}
+
+.profile-dropdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none !important;
+    background-color: #fff !important;
+    color: #161616 !important;
+    font-weight: 500;
+}
+.profile-dropdown > .img { 
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+.profile-dropdown > .img > img { 
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.profile-dropdown > span {
+    margin-left: 6px;
+}
+
+.message-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 980px) {
+    .nav-header { padding: 30px 40px; }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 40px 0px 20px 0px;
+    }
+    .nav-menu > .green-btn {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .nav-header { padding: 40px 10px 20px 10px; }
+}

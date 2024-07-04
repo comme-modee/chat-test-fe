@@ -1,0 +1,58 @@
+.post-detail-card {
+    width: 100%;
+}
+.post-detail-card > .title { width: 100%; padding: 20px 0; font-size: 30px; font-weight: 500; border-bottom: 1px solid #eee; }
+.post-detail-card > .contents { border-bottom: 1px solid #eee; }
+
+.contents-footer { display: flex; justify-content: space-between; align-items: center; padding: 10px 10px 10px 16px; }
+.contents-footer > .like-comment-num { display: flex; align-items: center; gap: 10px; font-size: 18px; }
+.contents-footer > .like-comment-num .like { display: flex; align-items: center; cursor: pointer; gap: 4px; }
+.contents-footer > .like-comment-num .light-btn:nth-child(1) { padding: 0px 0px 0px 8px; }
+.contents-footer > .like-comment-num .light-btn:nth-child(2) { gap: 4px; }
+.contents-footer > .like-comment-num .light-btn:nth-child(3) { gap: 4px; cursor: default; }
+.contents-footer > .like-comment-num .light-btn:nth-child(3):hover { background-color: initial; }
+.contents-footer > .like-comment-num .dropdown .dropdown-toggle { padding: 4px 10px 4px 8px !important; border: none; }
+.contents-footer > .like-comment-num .dropdown .dropdown-toggle::after { font-size: 14px !important; }
+.contents-footer > .like-comment-num .dropdown .dropdown-item { display: flex; gap: 10px; align-items: center; }
+
+.post-detail-card > .contents .tags { padding: 10px; display: block; }
+.post-detail-card > .contents .tags > .tag {
+    display: inline-block;
+    color: cornflowerblue;
+    font-weight: 500;
+    white-space: nowrap;
+    margin-right: 6px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .post-detail-card > .title {
+        font-size: 26px;
+        text-align: center;
+    }
+    .post-detail-card > div:nth-child(2) {
+        padding: 6px 0px 10px 10px;
+    }
+    .post-detail-card > div:nth-child(2) > .author {
+        padding: 0;
+    }
+    .contents-footer {
+        padding: 10px 0px 6px 4px;
+    }
+    .contents-footer > .like-comment-num {
+        gap: 6px;
+    }
+    .contents-footer > .like-comment-num > .light-btn {
+        height: 32px;
+    }
+}
+
+
+@media screen and (max-width: 540px) {
+    .post-detail-card > .title {
+        font-size: 22px;
+    }
+    .edit-delete-btns {
+        display: none;
+    }
+}

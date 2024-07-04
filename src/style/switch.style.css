@@ -1,0 +1,58 @@
+.react-switch-checkbox {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+  
+.react-switch-label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    width: 50px;
+    height: 25px;
+    background-color: #eef2f7;
+    border-radius: 50px;
+    transition: background-color .2s;
+}
+  
+.react-switch-label .react-switch-button {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    transition: 0.2s;
+    background-color: #fff;
+    box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
+}
+  
+.react-switch-checkbox:checked + .react-switch-label {
+    background-color: rgba(57, 175, 209, 0.5)
+}
+.react-switch-checkbox:checked + .react-switch-label .react-switch-button {
+    left: calc(100% - 2px);
+    transform: translateX(-100%);
+}
+  
+/* 스위치 버튼을 클릭하는 순간 버튼이 늘어나는듯한 동적 모션 */
+/* .react-switch-label:active .react-switch-button {
+    width: 30px;
+} */
+
+
+@media screen and (max-width: 480px) {
+    .react-switch-label {
+      width: 40px;
+      height: 20px;
+      border-radius: 40px;
+    }
+    .react-switch-label .react-switch-button {
+      width: 15px;
+      height: 15px;
+      border-radius: 15px;
+    }
+}

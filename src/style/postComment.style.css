@@ -1,0 +1,55 @@
+.post-comment { position: relative; padding: 16px 10px 16px 56px; background-color: #fff; border-bottom: 1px solid #eee; }
+.post-comment > .img { position: absolute; top: 16px; left: 16px; width: 30px; height: 30px; border-radius: 50%; overflow: hidden; border: 1px solid #ddd; }
+.post-comment > .img > img { width: 100%; height: 100%; object-fit: cover; }
+.post-comment > .header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 4px; }
+.post-comment > .header > .left { display: flex; align-items: center; gap: 10px; }
+.post-comment > .header > .right { display: flex; gap: 10px; }
+
+.comment-input { padding: 16px 10px 16px 16px; }
+.comment-input > .header { display: flex; align-items: center; gap: 14px; padding-bottom: 10px; }
+.comment-input > .header > .img { width: 30px; height: 30px; border-radius: 50%; overflow: hidden; border: 1px solid #ddd; }
+.comment-input > .header > .img > img { width: 100%; height: 100%; object-fit: cover; }
+.comment-input > .body { display: flex; justify-content: space-between; gap: 10px; }
+.comment-input > .body > div { width: 100%; }
+.comment-input > .body > div > textarea { width: 100%; border: 1px solid #28a745; border-radius: 8px; padding: 10px; outline: none; }
+.comment-input > .body > button { white-space: nowrap; border: none; }
+
+
+@media screen and (max-width: 768px) {
+    .post-comment {
+        padding: 14px 10px 14px 10px;
+    }
+    .post-comment > .img {
+        top: 10px;
+        left: 8px;
+    }
+    .post-comment > .header {
+        padding: 0px 0px 8px 36px;
+    }
+    .post-comment > .body > p {
+        font-size: 14px;
+    }
+    .post-comment textarea {
+        font-size: 14px;
+        height: 100px;
+    }
+    .comment-input {
+        padding: 4px;
+    }
+    .comment-input > .header {
+        padding: 6px;
+        gap: 8px;
+    }
+    .comment-input > .body {
+        gap: 6px;
+    }
+    .comment-input textarea {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .comment-input > .body {
+        flex-direction: column;
+    }
+}

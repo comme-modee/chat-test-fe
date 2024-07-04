@@ -1,0 +1,36 @@
+.account-container {
+    width: 100%; 
+    max-width: 768px;
+    margin: 0 auto;
+    border: 1px solid #28A745;
+    padding: 20px;
+    border-radius: 30px;
+}
+.account-container > .title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #28A745;
+    text-align: center;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #28A745;
+}
+.account-container > form { display: flex; flex-direction: column; gap: 14px; padding: 20px 20px 0px 20px; }
+.account-container > form label { font-weight: 700; }
+.account-container > form > .profile-img > .img { width: 140px; height: 140px; border-radius: 50%; overflow: hidden; border: 1px solid #28A745; }
+.account-container > form > .profile-img > .img > img { width: 100%; height: 100%; object-fit: cover; }
+.account-container > form > .profile-img > label > input { display: none; }
+.account-container > form > .fixed-info > .stack { padding-bottom: 10px; }
+.account-container > form > .fixed-info > .stack > .checkboxs { height: 180px; overflow-y: auto; display: flex; align-items: center; flex-wrap: wrap; gap: 10px; border: 1px solid #eee; padding: 10px; }
+.account-container > form > .fixed-info > .stack > .checkboxs > .form-check { padding-left: 0; transition: all 0.2s ease; }
+.account-container > form > .fixed-info > .stack > .checkboxs > .form-check > label { cursor: pointer; }
+.account-container > form > .fixed-info > .stack > .checkboxs > .custom-unchecked-class { opacity: 0.25; }
+.account-container > form > .fixed-info > .stack > .checkboxs > .custom-unchecked-class:hover { opacity: 1; }
+.account-container > form > .fixed-info > .others { display: flex; flex-direction: column; gap: 10px; }
+.account-container > form > .fixed-info > .others > .rank { display: flex; align-items: center; gap: 10px; }
+.account-container > form > .fixed-info > .others > .rank > span { display: inline-block; width: 30px; height: 30px; border-radius: 50%; background-color: burlywood; }
+.account-container > form > .submit { border-top: 1px solid #eee; padding-top: 14px; display: flex; justify-content: center; }
+
+@media screen and (max-width: 540px) {
+    .account-container > form { padding: 20px 0 0 0; }
+    .account-container > form > .fixed-info { flex-direction: column; }
+}

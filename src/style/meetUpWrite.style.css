@@ -1,0 +1,151 @@
+.meetup-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 600px;
+    gap: 20px;
+}
+
+.meetup-container>.title {
+    text-align: center;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 110%;
+    letter-spacing: -0.02em;
+    color: #333333;
+}
+
+.meetup-form {
+    padding: 0px;
+}
+
+.meetup-form>.meetup-user-info {
+    margin-bottom: 20px;
+}
+
+.meetup-user-info-img>img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.meetup-user-info-name {
+    font-size: 1.1rem;
+}
+
+.meetup-user-info-des {
+    font-size: 0.9rem;
+    color: gray;
+}
+
+.meetup-form>.mb-3>.form-label {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #333333;
+}
+
+.meetup-form>.mb-3>.form-input {
+    box-sizing: border-box;
+    width: 600px;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+}
+
+.form-input-disabled {
+    box-sizing: border-box;
+    width: 600px;
+    background: #ffffffa5;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+}
+
+.meetup-thumbnail {
+    box-sizing: border-box;
+    width: 100px;
+}
+
+.meetup-thumbnail>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#meet-date {
+    box-sizing: border-box;
+    width: 600px;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    font-size: 1rem;
+    padding: .375rem .75rem;
+}
+
+#meet-date-disabled {
+    box-sizing: border-box;
+    width: 600px;
+    background: #E9ECEF;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    font-size: 1rem;
+    padding: .375rem .75rem;
+}
+
+#meet-time {
+    box-sizing: border-box;
+    width: 600px;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    font-size: 1rem;
+    padding: .375rem .75rem;
+}
+
+#meet-time-disabled {
+    box-sizing: border-box;
+    width: 600px;
+    background: #E9ECEF;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    font-size: 1rem;
+    padding: .375rem .75rem;
+}
+
+#custom-switch.form-check-input:checked {
+    background-color: #28A745;
+    border: none;
+}
+
+@media screen and (max-width: 600px) {
+    .meetup-form>.mb-3>.form-label {
+        width: 300px;
+    }
+
+    .meetup-form>.mb-3>.form-input {
+        width: 300px;
+    }
+
+    .form-input-disabled {
+        width: 300px;
+    }
+
+    #meet-date {
+        width: 300px;
+    }
+
+    #meet-date-disabled {
+        width: 300px;
+    }
+
+    #meet-time {
+        width: 300px;
+    }
+
+    #meet-time-disabled {
+        width: 300px;
+    }
+}

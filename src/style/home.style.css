@@ -1,0 +1,451 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.home>.main-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    font-size: 50px;
+    font-family: 'NewsReader';
+    margin-top: 40px;
+}
+
+.home>.main-title>div {
+    line-height: normal;
+}
+
+.home>.main-title>.italic {
+    font-family: 'NewsReaderItalic';
+}
+
+.home>.sub-title {
+    text-align: center;
+}
+
+.home>.meet-up-container,
+.home>.post-container,
+.home>.qna-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.home>.meet-up-container {
+    height: 330px;
+}
+
+.home>.post-container {
+    background-color: #F5F5F5;
+    height: 420px;
+    padding: 20px 0;
+}
+
+.home>.qna-container {
+    height: 340px;
+    padding: 16px 0px;
+}
+
+
+
+/* 스터디모임 카드 */
+.home-meet-up-card {
+    width: 300px;
+    height: 100%;
+    background-color: #FAFAF5;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid #E6E6E6;
+    cursor: pointer;
+}
+
+.home-meet-up-card-disabled {
+    width: 300px;
+    height: 100%;
+    background-color: black;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid #E6E6E6;
+    cursor: pointer;
+}
+
+.home-meet-up-card>.img {
+    height: 200px;
+    position: relative;
+}
+
+.home-meet-up-card>.img>img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home-meet-up-card>.img>.overlay {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    background-color: #28A745;
+    color: white;
+    padding: 5px 10px 5px 10px;
+    z-index: 2;
+}
+
+.home-meet-up-card>.img>.overlay-finish {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    background-color: #F24E1E;
+    color: white;
+    padding: 5px 10px 5px 10px;
+    z-index: 2;
+}
+
+.home-meet-up-card>.img>.category-overlay {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    border-radius: 20px;
+    color: #fff;
+    padding: 5px 10px 5px 10px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    z-index: 2;
+}
+
+.home-meet-up-card>.img>.green { background-color: rgb(0, 107, 32); }
+.home-meet-up-card>.img>.violet { background-color: rgb(97, 44, 139); }
+.home-meet-up-card>.img>.blue { background-color: rgb(23, 15, 131); }
+.home-meet-up-card>.img>.red { background-color: rgb(255, 87, 27); }
+
+.home-meet-up-card>.contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100% - 200px);
+    padding: 20px 26px;
+}
+
+.home-meet-up-card>.contents>.title {
+    font-size: 20px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.home-meet-up-card>.contents>.schedule {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+/* 포스트카드 */
+.home-post-card {
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.home-post-card:hover>.contents>.title {
+    color: #28A745;
+}
+
+.home-post-card>.img {
+    height: 45%;
+}
+
+.home-post-card>.img>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home-post-card>.contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 55%;
+    padding: 20px 30px;
+}
+
+.home-post-card>.contents>.small-text {
+    display: flex;
+    gap: 10px;
+}
+
+.home-post-card>.contents>.title {
+    transition: all 0.2s ease;
+}
+
+.home-post-card>.contents>.title>p {
+    font-size: 26px;
+    font-weight: 500;
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 36px;
+}
+
+
+/* QNA 카드 */
+.home >.qna-container > .home-qna-card {
+    position: relative;
+    width: 300px;
+    height: 100%;
+    background: #ffffff;
+    border: 1px solid #28a745;
+    box-shadow: 3px 4px 0px 0px rgba(124, 209, 144, 0.2);
+    border-radius: 20px;
+    padding: 30px 20px 20px 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/* .home >.qna-container > .home-qna-card::before {
+    content: 'Q&A';
+    position: absolute;
+    top: -24px;
+    left: -20px;
+    display: block;
+    font-size: 40px;
+    font-weight: 700;
+    color: rgba(124, 209, 144, 0.5);
+    -webkit-color: rgba(124, 209, 144, 0.5);
+    transform: rotate(-10deg);
+} */
+
+.home >.qna-container > .home-qna-card > .content > .title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px;
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin-bottom: 6px;
+}
+.home >.qna-container > .home-qna-card > .content > .content {
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+}
+.home >.qna-container > .home-qna-card > .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.home >.qna-container > .home-qna-card > .bottom > .user {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.home >.qna-container > .home-qna-card > .bottom > .info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.home >.qna-container > .home-qna-card > .bottom > .info > .category {
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    width: fit-content;
+    height: fit-content;
+}
+.home >.qna-container > .home-qna-card > .bottom > .info > .tech { background-color: rgb(200, 229, 238); }
+.home >.qna-container > .home-qna-card > .bottom > .info > .career { background-color: rgb(255, 220, 214); }
+.home >.qna-container > .home-qna-card > .bottom > .info > .etc { background-color: rgb(255, 242, 199); }
+
+.home >.qna-container > .home-qna-card > .bottom > .info > .answers {
+    padding: 4px 10px;
+    background-color: rgb(230, 238, 200);
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+    gap: 4px;
+}
+.home >.qna-container > .home-qna-card > .bottom > .info > .answers > span {
+    font-weight: 600;
+}
+
+
+@media screen and (max-width: 980px) {
+    .home {
+        gap: 30px;
+    }
+    .home>.meet-up-container, 
+    .home>.post-container {
+        gap: 10px;
+    }
+    .home>.qna-container {
+        gap: 10px;
+    }
+    .home>.post-container {
+        height: 360px;
+    }
+    .home-post-card,
+    .home-meet-up-card {
+        width: calc((100% / 3) - 15px);
+    }
+    .home >.qna-container > .home-qna-card {
+        width: calc((100% / 2) - 10px);
+        height: calc((100% / 2));
+        padding: 20px 20px 14px 20px;
+    }
+    .home-post-card>.contents,
+    .home-meet-up-card>.contents {
+        padding: 16px 20px;
+    }
+    .home >.qna-container > .home-qna-card > .content > .title,
+    .home-post-card>.contents>.title>p {
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .home >.qna-container > .home-qna-card > .content > .content {
+        display: none;
+    }
+    .home-meet-up-card>.contents .schedule {
+        font-size: 14px;
+    }
+    .home-post-card>.contents .small-text {
+        white-space: nowrap;
+    }
+    .home >.qna-container > .home-qna-card > .bottom > .info {
+        gap: 6px;
+    }
+    .home >.qna-container > .home-qna-card > .bottom > .info > .answers {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .home>.main-title {
+        font-size: 36px;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .home>.sub-title {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .home {
+        gap: 30px;
+    }
+
+    .home>.main-title {
+        font-size: 24px;
+        gap: 6px;
+        margin-top: 10px;
+    }
+
+    .home>.sub-title {
+        font-size: 14px;
+    }
+    .home>.post-container {
+        height: 400px;
+        padding: 14px;
+        gap: 10px;
+    }
+    .home>.meet-up-container {
+        height: 530px;
+        padding: 14px 0px;
+        gap: 10px;
+    }
+    .home>.qna-container {
+        height: 360px;
+        padding: 14px 0px;
+        gap: 10px;
+        transform: translateY(-20px);
+    }
+    .home-post-card {
+        display: flex;
+        width: 100%;
+        height: calc((100% / 3) - 10px)
+    }
+    .home-post-card>.contents {
+        width: 70%;
+        height: 100%;
+        padding: 16px;
+    }
+    .home-post-card>.contents .small-text {
+        font-size: 13px;
+    }
+    .home-post-card>.contents>.title>p {
+        font-size: 18px;
+        -webkit-line-clamp: 1;
+    }
+    .home-post-card>.img {
+        width: 30%;
+        height: 100%;
+    }
+
+    .home-meet-up-card {
+        width: 100%;
+        height: calc(25% - 10px);
+        border-radius: 14px;
+        display: flex;
+    }
+    .home-meet-up-card>.img {
+        width: 30%;
+        height: 100%;
+    }
+    .home-meet-up-card>.contents {
+        width: 70%;
+        height: 100%;
+        padding: 16px;
+    }
+    .home >.qna-container > .home-qna-card > .content > .title,
+    .home-meet-up-card>.contents>.title {
+        font-size: 18px;   
+        line-height: 22px;
+    }
+    .home-meet-up-card>.contents .small-text {
+        font-size: 13px;
+    }
+    .home-meet-up-card>.img>.category-overlay {
+        left: 8px;
+        top: 80px;
+        padding: 3px 8px;
+        height: fit-content;
+    }
+    .home-meet-up-card>.img>.overlay {
+        left: 8px;
+        padding: 4px 10px;
+        text-align: center;
+        width: fit-content;
+        white-space: nowrap;
+        font-size: 14px;
+    }
+    .home >.qna-container > .home-qna-card > .bottom {
+        flex-direction: column;
+        align-items: baseline;
+        gap: 4px;
+    }
+}

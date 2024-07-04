@@ -1,0 +1,134 @@
+.admin-page {
+    display: flex;
+}
+.admin-page > .contents {
+    margin-left: 200px;
+    padding: 20px;
+    width: calc(100vw - 200px);
+}
+.admin-page > .contents > .locate-center {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.table-container {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.table-row {
+    vertical-align: middle;
+}
+.table-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    border: none;
+    width: 100%;
+}
+.table-cell > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.table-cell > .user-info {
+    width: calc(100% - 50px);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0px;
+    align-items: baseline;
+}
+.table-container > thead > tr > th {
+    white-space: nowrap;
+    font-weight: 500;
+    background-color: #28a745;
+    color: #fff;
+    border: 1px solid #078124;
+}
+.table-container > tbody > .detail-info-tr > td {
+    font-size: 15px;
+    background-color: rgba(0, 0, 0, 0.03);
+    word-break: break-all;
+    vertical-align: middle;
+}
+/* .user-table > tbody > .detail-info-tr > td:nth-child(2) {
+    font-weight: 600;
+} */
+.locate-center table .select > td {
+    background-color: #ebf7fa;
+    color: #00799e;
+    font-weight: 600;
+}
+.locate-center table .hide-tab-header {
+    background-color: #ffeff2 !important;
+    color: #642532;
+}
+.locate-center table .blank-td {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    border: 1px solid rgb(240, 240, 240);
+}
+.locate-center table .date {
+    font-size: 14px !important;
+}
+.locate-center table .title > p {
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.locate-center table .detail-info-tr .cur-point:hover {
+    color: #00799e;
+    text-decoration: underline;
+}
+.post-content-td > p {
+    max-height: 200px;
+    overflow: auto;
+}
+.locate-center table .detail-info-tr .tag {
+    display: inline-block;
+    padding: 4px 10px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 121, 158, 0.5);
+    border-radius: 5px;
+    color: #00799e;
+    margin: 2px;
+}
+.toggle-td > input {
+    display: block;
+}
+.toggle-td > label {
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 980px) {
+    .admin-page > .contents {
+        margin-left: 0px;
+        margin-top: 56px;
+        width: 100%;
+    }
+    .table>:not(caption)>*>* {
+        padding: 6px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .table-container > tbody > .detail-info-tr > td,
+    .table-container {
+        font-size: 14px;
+    }
+    .admin-page > .contents {
+        padding: 10px;
+    }
+    .table-cell .user-info > .small-text {
+        font-size: 14px;
+    }
+    .locate-center table .detail-info-tr .tag {
+        padding: 2px 8px;
+    }
+}

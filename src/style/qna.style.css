@@ -1,0 +1,204 @@
+.qna-title {
+    color: #333333;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.qna-add-btn {
+    display: flex;
+    justify-content: end;
+}
+
+.qna-add-btn {
+    display: flex;
+    justify-content: end;
+}
+
+.qna-container > .contents-header-btns {
+    position: relative;
+}
+/* .qna-container > .contents-header-btns::before {
+    content: 'Q&A';
+    position: absolute;
+    z-index: 999;
+    top: 24px;
+    left: -20px;
+    display: block;
+    font-size: 40px;
+    font-weight: 700;
+    color: rgba(124, 209, 144, 0.5);
+    transform: rotate(-10deg);
+} */
+
+/* Q&A 카드 */
+.qna-card-container {
+    box-sizing: border-box;
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #28a745;
+    box-shadow: 3px 4px 0px 0px rgba(124, 209, 144, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    height: 220px;
+    display: flex;
+    gap: 20px;
+    transition: all 0.2s ease;
+}
+.qna-card-container:hover {
+    background-color: rgba(198, 240, 207, 0.2);
+}
+.qna-card-container > .left-side {
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.qna-card-container > .left-side > .answer-count {
+    width: 56px;
+    height: fit-content;
+    padding: 5px;
+    background-color: rgb(230, 238, 200);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+.qna-card-container:hover > .left-side > .answer-count {
+    background-color: rgb(216, 231, 161);
+}
+.qna-card-container > .left-side > .answer-count > .num {
+    font-size: 20px;
+    font-weight: 500;
+}
+.qna-card-container > .left-side > .category-overlay {
+    padding: 2px 8px;
+    background-color: rgb(200, 229, 238);
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    width: fit-content;
+}
+.qna-card-container > .left-side > .tech { background-color: rgb(200, 229, 238); }
+.qna-card-container > .left-side > .career { background-color: rgb(255, 220, 214); }
+.qna-card-container > .left-side > .etc { background-color: rgb(255, 242, 199); }
+
+.qna-card-container > .title-content {
+    width: calc(100% - 70px);
+    overflow: hidden;
+}
+
+.qna-card-container > .title-content > .title {
+    font-size: 24px;
+    font-weight: 500;
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    margin-bottom: 6px;
+}
+
+.qna-card-container > .title-content > .content {
+    overflow: hidden;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    color: #848684;
+}
+
+.qna-card-container > .author {
+    position: absolute;
+    left: 28px;
+    bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+}
+
+.qna-card-container > .author > .img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px solid coral;
+    overflow: hidden;
+}
+
+.qna-card-container > .btns {
+    position: absolute;
+    right: 14px;
+    bottom: 12px;
+    color: gray;
+    justify-content: space-between;
+    border-radius: 3px;
+    display: flex;
+    gap: 6px;
+}
+.qna-card-container > .btns > p {
+    padding: 4px 10px;
+}
+
+/* Q&A write */
+.write-form > .top > .text {
+    color: #333333;
+    font-size: 1.2rem;
+}
+
+.write-form > .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.qna-write-title {
+    font-size: 1.5rem;
+    color: #333333;
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.qna-write-title > input {
+    border: 1px solid #e8eaec;
+    background-color: #f2f2f2;
+    padding: 1px;
+    width: 100%;
+}
+
+.qna-write-title > .error {
+    color: red;
+}
+
+.w-md-editor-text {
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+}
+
+.w-md-editor-text-input {
+    flex: 1;
+}
+
+
+@media screen and (max-width: 768px) {
+    .qna-card-container > .title-content > .title { font-size: 22px; }
+}
+
+@media screen and (max-width: 540px) {
+    .qna-container > .contents-header-btns::before { content: none; }
+    .qna-card-container { height: 200px; padding: 14px 14px 20px 10px; border-radius: 14px; }
+    .qna-card-container > .title-content > .title { font-size: 18px; }
+    .qna-card-container > .title-content > .content { font-size: 14px; }
+    .qna-card-container > .author { left: 12px; bottom: 12px; }
+    .qna-card-container > .left-side > .answer-count { width: 50px; }
+}

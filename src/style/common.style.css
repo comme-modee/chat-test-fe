@@ -1,0 +1,435 @@
+@font-face {
+    font-family: "Pretendard";
+    src: url("../asset/font/PretendardVariable.woff2") format("woff");
+}
+
+@font-face {
+    font-family: "NewsReaderItalic";
+    src: url("../asset/font/Newsreader-Italic.ttf");
+}
+
+@font-face {
+    font-family: "NewsReader";
+    src: url("../asset/font/Newsreader.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #3161ff;
+    text-decoration: none;
+}
+
+body {
+    font-family: "Pretendard" !important;
+}
+
+.ml-1 {
+    margin-left: 10px !important;
+}
+
+.ml-2 {
+    margin-left: 20px !important;
+}
+
+.ml-3 {
+    margin-left: 30px !important;
+}
+
+.mr-1 {
+    margin-right: 10px !important;
+}
+
+.mr-2 {
+    margin-right: 20px !important;
+}
+
+.mr-3 {
+    margin-right: 30px !important;
+}
+
+.mb-1 {
+    margin-bottom: 10px !important;
+}
+
+.mb-2 {
+    margin-bottom: 20px !important;
+}
+
+.mb-3 {
+    margin-bottom: 30px !important;
+}
+
+.mt-1 {
+    margin-top: 10px !important;
+}
+
+.mt-2 {
+    margin-top: 20px !important;
+}
+
+.mt-3 {
+    margin-top: 30px !important;
+}
+
+.display-none {
+    display: none;
+}
+
+.display-flex {
+    display: flex;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.display-center {
+    display: flex;
+    justify-content: center;
+}
+
+.display-space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.display-center-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gap-10 {
+    gap: 10px;
+}
+
+.gap-20 {
+    gap: 20px;
+}
+
+.gap-30 {
+    gap: 30px;
+}
+
+.overflow-x {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.overflow-x::-webkit-scrollbar {
+    display: none;
+}
+
+.vh-100 {
+    height: 100vh;
+}
+
+.green-btn,
+.white-btn,
+.coral-btn,
+.light-btn,
+.blue-btn,
+.white-btn-disabled {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.green-btn {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+}
+
+.green-btn.show {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+}
+
+.green-btn:hover {
+    background-color: #078124;
+}
+
+.white-btn {
+    background-color: #fff;
+    border: 1px solid #28a745 !important;
+    color: #28a745 !important;
+}
+
+.white-btn.show {
+    background-color: #fff;
+    border: 1px solid #28a745 !important;
+    color: #28a745 !important;
+}
+
+.white-btn:hover {
+    background-color: #e6f5e9;
+}
+
+.white-btn-disabled {
+    background-color: #fff;
+    border: 1px solid gray !important;
+    color: gray !important;
+    cursor: default;
+}
+
+.coral-btn {
+    background-color: #fff;
+    border: 1px solid #f24e1e;
+    color: #f24e1e;
+}
+
+.coral-btn:hover {
+    background-color: #ffe6df;
+}
+
+.small-btn {
+    padding: 4px 8px;
+    font-size: 14px;
+}
+
+.light-btn {
+    background-color: #fff;
+    border: 1px solid #ddd !important;
+    color: #161616 !important;
+}
+
+.light-btn:hover {
+    background-color: #e6f5e9;
+}
+
+.blue-btn {
+    background-color: #fff;
+    border: 1px solid #00a2be !important;
+    color: #00a2be !important;
+}
+
+.blue-btn:hover {
+    background-color: #e5fafd;
+}
+
+.coral {
+    color: #f24e1e;
+}
+
+.green {
+    color: #28a745;
+}
+
+.blue {
+    color: #00a2be;
+}
+
+.small-text {
+    font-size: 14px;
+    color: #999;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+}
+
+.cur-point {
+    cursor: pointer;
+}
+
+.no-drag {
+    user-select: none;
+}
+
+/* 검색어input박스 / 정렬버튼 / 글등록버튼 */
+.contents-header-btns {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.contents-header-btns>*,
+.contents-header-btns>.dropdown>button {
+    height: 100%;
+}
+
+.search-input {
+    width: initial;
+    height: 38px;
+}
+.search-input > input {
+    border: none;
+    outline: none;
+    width: calc(100% - 16px);
+}
+.search-input > svg {
+    cursor: pointer;
+}
+
+/* 댓글이나 글에 표시되는 유저 프로필사진 */
+.small-profile-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+.small-profile-img>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 화살표 아이콘 (▼) */
+.small-toggle-btn {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+}
+
+/* 화살표 아이콘 (▲) */
+.small-toggle-btn-active {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0;
+    border-bottom: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-left: 0.3em solid transparent;
+}
+
+/* 팔로잉 토글 스위치 */
+.following-toggle {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.f-bold {
+    font-weight: 600;
+}
+
+.highlight-text {
+    color: #f24e1e;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+/* 디테일페이지 유저정보 + 드롭다운 버튼 부분 */
+.detail-page-user-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detail-page-user-container>.author {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.detail-page-user-container>.author>.img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+.detail-page-user-container>.author>.img>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.detail-page-user-container>.author>.user-name {
+    font-size: 16px;
+    margin: 0px 10px;
+    cursor: pointer;
+}
+
+.detail-page-user-container>.dropdown>button {
+    border: none;
+    font-size: 18px;
+    color: #929292;
+}
+
+.detail-page-user-container>.dropdown>button::after {
+    display: none;
+}
+
+.gradient-btn-pink {
+    font-weight: 500;
+    background: linear-gradient(45deg, #ffe9ab, #ffb1b1);
+    color: #161616;
+    border: none;
+} 
+
+.gradient-btn-blue {
+    font-weight: 500;
+    background: linear-gradient(45deg, #affdcb, #56b8bd);
+    color: #161616;
+    border: none;
+} 
+
+@media screen and (max-width: 768px) {
+
+    .white-btn,
+    .green-btn {
+        padding: 6px 12px;
+    }
+
+    .following-toggle {
+        position: relative;
+        flex-direction: row;
+        justify-content: end;
+        padding: 10px 0;
+        gap: 2px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .contents-header-btns {
+        width: 100%;
+        border-bottom: none;
+        padding: initial;
+    }
+    .contents-header-btns > .search-input {
+        width: 180px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .small-text {
+        font-size: 12px;
+    }
+    .new-post-btn > span {
+        display: none;
+    }
+}

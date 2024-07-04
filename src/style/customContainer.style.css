@@ -1,0 +1,19 @@
+.custom-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 50px 50px 50px;
+    /* background-color: lightyellow; */
+}
+
+@media screen and (max-width: 980px) {
+    .custom-container { padding: 20px 30px; }
+}
+
+@media screen and (max-width: 768px) {
+    .custom-container { padding: 20px; }
+}
+
+@media screen and (max-width: 540px) {
+    .custom-container { padding: 10px; }
+}

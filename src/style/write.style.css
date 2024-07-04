@@ -1,0 +1,127 @@
+.w-md-editor-text{
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+}
+
+.w-md-editor-text-input {
+    flex : 1;
+}
+
+.write-form input {
+    border: none;
+    padding: 12px;
+}
+.w-md-editor-preview,
+.write-form textarea {
+    padding: 12px;
+}
+.write-form > .write-title {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+.write-form > .write-title > input {
+    font-size: 30px;
+    font-weight: 500;
+} 
+.write-form > .submit { 
+    border-top: 1px solid #eee; 
+    padding-top: 14px; 
+    display: flex; 
+    justify-content: center; 
+}
+.write-form > .submit > button { 
+    width: 100px; 
+}
+
+.write-form > .editor {
+    margin-top: 10px; 
+}
+.write-form > .write-tag { 
+    display: inline-flex; 
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px; 
+    gap: 0px 6px; 
+    /* height: 32px;  */
+    width: 70%;
+}
+.write-form > .write-tag > div {
+    display: flex;
+}
+.write-form > .write-tag > div > input { 
+    padding: 0; 
+    width: fit-content; 
+}
+.write-form > .write-tag > div > input:focus { 
+    border: none; 
+}
+.write-form > .write-tag > .tag { 
+    position: relative; 
+    color: cornflowerblue; 
+    font-weight: 500; 
+    white-space: nowrap; 
+    padding: 4px; 
+    cursor: pointer;
+}
+.write-form > .write-tag > .tag::before { 
+    content: '✖'; 
+    opacity: 0;
+    visibility: hidden;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 24px; 
+    height: 24px; 
+    color: #fff; 
+    background-color: rgba(242, 78, 30, 0.7); 
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+.write-form > .write-tag > .tag:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+.write-form > .thumbnail-img { 
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: end;
+    width: 30%;
+    padding: 10px; 
+} 
+.write-form > .thumbnail-img > .img {
+    width: 100px;
+    height: 76px;
+    border: 1px solid #ddd;
+}
+.write-form > .thumbnail-img > .img > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+    .write-form > .write-title > input {
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .write-form > .write-title > input {
+        font-size: 20px;
+        padding-top: 2px;
+    }
+    .write-form > .thumbnail-img{
+        width: 100%;
+    }
+    .write-form > .write-tag {
+        width: 100%;
+        border-bottom: 1px solid #eee;
+    }
+}
