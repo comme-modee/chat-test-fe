@@ -71,19 +71,16 @@ const ChatBtn = () => {
     },[selectedChatRoomMessageList])
 
     const backToChatRoomList = () => {
-        //채팅창 사라지는 시간(0.5s)이 지난 후에 밑의 로직이 실행됨.
-        setTimeout(() => {
-           //메세지를 전송하고 채팅목록으로 돌아갈때 업데이트된 내용의 채팅목록을 보여주기 위함
-            dispatch(chatActions.getChatRoomList())
-            setSelectedChatRoom('')
-            setSelectedChatRoomMessageList([])
-            if(chatRoomList.length > 0) {
-                chatIn.current.style.display = 'none';
-            } 
-            setMessage('')
-            setMessageList([])
-            setIsGoBackBtnShow(false) 
-        }, 500);
+        //메세지를 전송하고 채팅목록으로 돌아갈때 업데이트된 내용의 채팅목록을 보여주기 위함
+        dispatch(chatActions.getChatRoomList())
+        setSelectedChatRoom('')
+        setSelectedChatRoomMessageList([])
+        if(chatRoomList.length > 0) {
+            chatIn.current.style.display = 'none';
+        } 
+        setMessage('')
+        setMessageList([])
+        setIsGoBackBtnShow(false) 
     }
 
     const handleChatRoom = () => {
