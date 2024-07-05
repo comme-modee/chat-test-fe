@@ -76,7 +76,7 @@ const ChatBtn = () => {
         setSelectedChatRoom('')
         setSelectedChatRoomMessageList([])
         if(chatRoomList.length > 0) {
-            chatIn.current.style.display = 'none';
+            chatIn.current.style.display = 'none'; 
         } 
         setMessage('')
         setMessageList([])
