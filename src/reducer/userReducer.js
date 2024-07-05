@@ -39,7 +39,10 @@ function userReducer(state = initialState, action) {
     case types.UPDATE_USER_SUCCESS:
     case types.GOOGLE_LOGIN_SUCCESS:
       return { ...state, loading: false, user: payload.user, error: "" }
-    
+
+    case types.SET_USER_ONLINE_STATE:
+      return { ...state, loading: false, user: payload, error: ''}
+      
     case types.FORGET_PASSWORD_SUCCESS:
       return { ...state, loading: false, findUser: payload, error: '' }
 

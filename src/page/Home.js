@@ -6,25 +6,12 @@ import HomeMeetUpCard from '../component/home/HomeMeetUpCard';
 import '../style/home.style.css';
 import { homeActions } from '../action/homeAction';
 import { qnaActions } from '../action/qnaAction';
-import socket from '../utils/socketIo';
+import { userActions } from '../action/userAction';
 
 const Home = () => {
   const dispatch = useDispatch();
-  const { user } = useSelector((state) => state.user);
   const { homePost, homeMeetUp } = useSelector((state) => state.home);
-  const { qnaList } = useSelector((state) => state.qna);
-
-  useEffect(() => {
-    socket.on('online', ({ socketId, online }) => {
-      console.log('socketId: ', socketId);
-      if(online) {
-        sessionStorage.setItem('on', socketId)
-      } else {
-        sessionStorage.removeItem('on')
-      }
-    })
-  },[])
-  
+  const { qnaList } = useSelector((state) => state.qna);  
 
   useEffect(() => {
     dispatch(homeActions.getHomePostData())

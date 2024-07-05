@@ -1,6 +1,7 @@
 import api from "../utils/api";
 import * as types from "../constants/user.constants";
 import { commonUiActions } from "./commonUiAction";
+import socket from "../utils/socketIo";
 
 const loginWithToken = () => async (dispatch) => {
   try {
@@ -11,6 +12,7 @@ const loginWithToken = () => async (dispatch) => {
     }
     else {
       dispatch({ type: types.TOKEN_LOGIN_SUCCESS, payload: res.data.data })
+      // dispatch(userOnlineState())
     }
 
   } catch (error) {
@@ -33,6 +35,7 @@ const loginWithEmail = ({ email, password }) => async (dispatch) => {
     else {
       dispatch({ type: types.LOGIN_SUCCESS, payload: res.data.data })
       sessionStorage.setItem('token', res.data.data.token)
+      // dispatch(userOnlineState({ socketId: socket.id, online: true }))
       dispatch(commonUiActions.showToastMessage(`${res.data.data.user.userName}님 환영합니다`, "success"))
     }
 
@@ -43,6 +46,7 @@ const loginWithEmail = ({ email, password }) => async (dispatch) => {
 
 const logout = () => async (dispatch) => {
   dispatch({ type: types.LOGOUT });
+  // dispatch(userOnlineState({ socketId: '', online: false }))
   sessionStorage.removeItem('token');
 };
 
@@ -53,6 +57,7 @@ const loginWithGoogle = (token) => async (dispatch) => {
     if (res.status === 200) {
       sessionStorage.setItem("token", res.data.token);
       dispatch({ type: types.GOOGLE_LOGIN_SUCCESS, payload: res.data });
+      // dispatch(userOnlineState({ socketId: socket.id, online: true }))
     }
     else {
       throw new Error(res.error);
@@ -229,6 +234,19 @@ const setNewPassword = (userId, password, navigate) => async (dispatch) => {
     }
 }
 
+// const userOnlineState = ({ socketId, online }) => async (dispatch) => {
+//   try {
+//     dispatch({type: types.SET_USER_ONLINE_STATE_REQUEST})
+//     const res = await api.post('/user/online', { socketId, online })
+//     if(res.status === 200) {
+//       dispatch({type: types.SET_USER_ONLINE_STATE_SUCCESS, payload: res.data.data})
+//     } else {
+//       throw new Error(res.error)
+//     }
+//   } catch (error) {
+//     dispatch({type: types.SET_USER_ONLINE_STATE_FAIL})
+//   }
+// }
 
 export const userActions = {
   loginWithToken,
@@ -247,5 +265,6 @@ export const userActions = {
   unfollowUser,
   blockUser,
   forgetPassword,
-  setNewPassword
+  setNewPassword,
+  // userOnlineState
 };

@@ -163,6 +163,10 @@ const MyPage = () => {
                 </button>
               )}
             </h2>
+            <div className='user-status'>
+              <div className={`${uniqueUser.online.online ? 'on-line' : 'off-line'}`}></div>
+              <span className='small-text'>{uniqueUser.online.online ? '활동중' : '자리비움'}</span>
+            </div>
             <p className="description">{uniqueUser.description}</p>
             <div className="stacks-container">
               {uniqueUser.stacks && uniqueUser.stacks.map(

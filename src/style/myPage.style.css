@@ -59,6 +59,25 @@
     margin: 0px;
 }
 
+.user-status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+.user-status > div {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    outline: 2px solid #fff;
+}
+.user-status > .on-line {
+    background-color: #19ff4e;
+}
+.user-status > .off-line {
+    background-color: #aeaeae;
+}
+
 .user-rank {
     font-size: 14px;
     color: gray;

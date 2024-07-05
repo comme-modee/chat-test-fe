@@ -1,10 +1,10 @@
 import axios from "axios";
 // 상황따라 주소 다름
-// const LOCAL_BACKEND = process.env.REACT_APP_LOCAL_BACKEND;
-const BACKEND = process.env.REACT_APP_BACKEND
+const LOCAL_BACKEND = process.env.REACT_APP_LOCAL_BACKEND;
+// const BACKEND = process.env.REACT_APP_BACKEND
 
 const api = axios.create({
-  baseURL: `${BACKEND}/api`,
+  baseURL: `${LOCAL_BACKEND}/api`,
   headers: {
     "Content-Type": "application/json",
     authorization: `Bearer ${sessionStorage.getItem("token")}`,

@@ -7,6 +7,7 @@ import { chatActions } from '../action/chatAction';
 import '../style/chat.style.css';
 import chatIcon from '../asset/img/chat-icon.png';
 import socket from '../utils/socketIo'
+import { SET_USER_ONLINE_STATE } from '../constants/user.constants'
 
 const ChatBtn = () => {
     const dispatch = useDispatch();
@@ -24,6 +25,16 @@ const ChatBtn = () => {
     useEffect(() => {
         dispatch(chatActions.getChatRoomList())
     },[])
+
+    useEffect(() => {
+        socket.emit('user', (user._id), (res) => {
+            if(res?.ok) {
+                dispatch({type: SET_USER_ONLINE_STATE, payload: res.data})
+            } else {
+                console.log(res.error)
+            }
+        })
+    },[user.online.online])
     
     useEffect(() => { 
 
@@ -36,8 +47,8 @@ const ChatBtn = () => {
 
     const handleClickOutside = (event) => {
         if (chatRoom.current && !chatRoom.current.contains(event.target) && !event.target.closest('.chat-icon')) {
-            chatRoom.current.style.right = '-500px';
             backToChatRoomList()
+            chatRoom.current.style.right = '-500px';
         }
     }
 
