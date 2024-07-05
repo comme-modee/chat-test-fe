@@ -6,6 +6,7 @@ import qnaReducer from "./qnaReducer";
 import commonUiReducer from "./commonUIReducer";
 import homeReducer from "./homeReducer";
 import reportReducer from "./reportReducer";
+import chatReducer from "./chatReducer";
 
 const store = configureStore({
     reducer: {
@@ -15,6 +16,7 @@ const store = configureStore({
         qna: qnaReducer,
         home: homeReducer,
         report: reportReducer,
+        chat: chatReducer,
         ui: commonUiReducer
     },
 });

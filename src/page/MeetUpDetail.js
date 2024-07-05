@@ -6,16 +6,12 @@ import Map from '../component/Map';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { meetUpActions } from '../action/meetUpAction';
-import ClipLoader from 'react-spinners/ClipLoader';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
 import { commonUiActions } from '../action/commonUiAction';
 import { reportActions } from '../action/reportAction';
 import WriteBtn from '../component/WriteBtn';
 
-
-////////////////////////////////////////////////////////////////////////////////
-//추가된 부분 ↓↓↓ 신고사유
 const reasons = [ 
   '모임 참가비 과액 유도',
   '모임 참여 멤버 외에 외부인원 초대',
@@ -25,26 +21,18 @@ const reasons = [
   '기타'
 ];
 
-//신고사유들 오브젝트 형식으로 변환. 기본세팅값 모두 false로 세팅. 이후 사용자가 체크하면 true되게
 const initialCheckboxStates = reasons.reduce((acc, reason) => {
     acc[reason] = false;
     return acc;
 }, {});
-////////////////////////////////////////////////////////////////////////////////
-
-
 
 const MeetUpDetail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { user } = useSelector((state) => state.user);
-  const { selectedMeetUp, loading } = useSelector((state) => state.meetUp);
+  const { selectedMeetUp } = useSelector((state) => state.meetUp);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
-
-
-  ////////////////////////////////////////////////////////////////////////////////
-  //추가된 부분 ↓↓↓
   const [ isMyPost, setIsMyPost ] = useState(false);
   const [ isReportModalOpen, setIsReportModalOpen ] = useState(false);
   const [ checkboxStates, setCheckboxStates ] = useState(initialCheckboxStates);
@@ -53,8 +41,6 @@ const MeetUpDetail = () => {
     dispatch(meetUpActions.getMeetUpDetail(id));
   }, [id, dispatch]);
 
-
-  //추가된 부분 ↓↓↓ 내 글인지 확인하고 isMyPost 세팅
   useEffect(()=>{
       if(selectedMeetUp && user && selectedMeetUp.organizer._id === user._id) {
           setIsMyPost(true)
@@ -62,7 +48,6 @@ const MeetUpDetail = () => {
           setIsMyPost(false)
       }
   },[selectedMeetUp, user])
-  ////////////////////////////////////////////////////////////////////////////////////
 
 
   const joinMeetUp = (status) => {
@@ -83,7 +68,7 @@ const MeetUpDetail = () => {
 
   const deleteMeetUp = () => {
     // 현재 인원이 1인 경우(organizer만 있는 경우) 삭제 가능, 참여 인원이 있으면 삭제 불가
-    if (selectedMeetUp.currentParticipants == 1) {
+    if (selectedMeetUp.currentParticipants === 1) {
       dispatch(meetUpActions.deleteMeetUp(id, navigate));
     }
     else {
@@ -94,7 +79,6 @@ const MeetUpDetail = () => {
     }
   }
 
-  //추가된 부분 ↓↓↓////////////////////////////////////////////////////////
   const sendReport = () => {
       const reportedUserId = selectedMeetUp.organizer._id;
       const postId = undefined;
@@ -117,19 +101,9 @@ const MeetUpDetail = () => {
           [name]: checked
       }));
   };
-  ////////////////////////////////////////////////////////////////////////
-
-
-  if (loading) {
-    return (
-      <div className='loading' >
-        <ClipLoader color="#28A745" loading={loading} size={100} />
-      </div>);
-  }
 
   return (
     <>
-            {/* 추가된 부분 ↓↓↓ */}
             {/* 신고모달 */}
             <Modal show={isReportModalOpen} onHide={() => setIsReportModalOpen(false)} dialogClassName='modal-dialog-centered' size='md'>
               <Modal.Header closeButton>
@@ -194,8 +168,6 @@ const MeetUpDetail = () => {
           <div className='title'>{selectedMeetUp?.title}</div>
 
 
-
-          {/* 추가된 부분 ↓↓↓ */}
           <div className='detail-page-user-container'>
             <div className='author'>
                 <span className='img'><img src={selectedMeetUp?.organizer.profileImage} alt=''/></span>
@@ -224,8 +196,6 @@ const MeetUpDetail = () => {
                 </Dropdown.Menu>
             </Dropdown>}
         </div>
-        {/* 추가된 부분 ↑↑↑ */}
-
 
 
           <div className='content'>

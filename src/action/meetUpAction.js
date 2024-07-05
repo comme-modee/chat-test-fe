@@ -1,7 +1,7 @@
 import api from "../utils/api";
 import * as types from "../constants/meetUp.constants";
-import { toast } from "react-toastify";
 import { commonUiActions } from "./commonUiAction";
+import { chatActions } from "./chatAction";
 
 const getMeetUpList = (searchQuery) => async (dispatch) => {
     try {
@@ -45,6 +45,7 @@ const createMeetUp = (formData, navigate) => async (dispatch) => {
         } else {
             dispatch({ type: types.MEETUP_CREATE_SUCCESS, payload: res.data.data });;
             dispatch(commonUiActions.showToastMessage("새 모임이 등록되었습니다.", "success"));
+            dispatch(chatActions.getChatRoomList())
             navigate(`/meetUp/${res.data.data.newMeetUp._id}`);
         }
     } catch (error) {
@@ -97,6 +98,8 @@ const joinMeetUp = (id, navigate) => async (dispatch) => {
         } else {
             dispatch({ type: types.JOIN_MEETUP_SUCCESS, payload: res.data.data.meetUp });
             dispatch(commonUiActions.showToastMessage("모임 참여에 성공했습니다.", "success"));
+            dispatch(getMeetUpDetail(id))
+            dispatch(chatActions.getChatRoomList())
             navigate(`/meetup/${id}`);
         }
     } catch (error) {
@@ -114,6 +117,8 @@ const leaveMeetUp = (id, navigate) => async (dispatch) => {
         } else {
             dispatch({ type: types.LEAVE_MEETUP_SUCCESS, payload: res.data.data.meetUp });
             dispatch(commonUiActions.showToastMessage("모임 참여 취소에 성공했습니다.", "success"));
+            dispatch(getMeetUpDetail(id))
+            dispatch(chatActions.getChatRoomList())
             navigate(`/meetup/${id}`);
         }
     } catch (error) {

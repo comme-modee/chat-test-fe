@@ -89,7 +89,8 @@ function userReducer(state = initialState, action) {
       return { ...state, error: '' }
 
     case types.SET_FIND_USER:
-      return { ...state, findUser: null}
+      return { ...state, findUser: payload }
+
     default:
       return state;
   }

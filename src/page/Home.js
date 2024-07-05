@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import HomePostCard from '../component/home/HomePostCard';
 import HomeQnaCard from '../component/home/HomeQnaCard';
@@ -6,13 +6,26 @@ import HomeMeetUpCard from '../component/home/HomeMeetUpCard';
 import '../style/home.style.css';
 import { homeActions } from '../action/homeAction';
 import { qnaActions } from '../action/qnaAction';
+import socket from '../utils/socketIo';
 
 const Home = () => {
   const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.user);
   const { homePost, homeMeetUp } = useSelector((state) => state.home);
   const { qnaList } = useSelector((state) => state.qna);
 
-    
+  useEffect(() => {
+    socket.on('online', ({ socketId, online }) => {
+      console.log('socketId: ', socketId);
+      if(online) {
+        sessionStorage.setItem('on', socketId)
+      } else {
+        sessionStorage.removeItem('on')
+      }
+    })
+  },[])
+  
+
   useEffect(() => {
     dispatch(homeActions.getHomePostData())
     dispatch(homeActions.getHomeMeetUpData());

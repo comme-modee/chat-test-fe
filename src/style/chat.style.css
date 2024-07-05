@@ -159,6 +159,17 @@
     border-top-right-radius: 0px;
     background-color: #fff382;
 }
+.chat-room > .chat-list > .chat-in > .chat-messages > .system {
+    justify-content: center;
+}
+.chat-room > .chat-list > .chat-in > .chat-messages > .system > div {
+    background-color: #eee;
+    color: #979797;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 4px 16px;
+    border-radius: 30px;
+}
 .chat-room > .chat-list > .chat {
     display: flex;
     justify-content: space-between;
@@ -240,6 +251,10 @@
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+}
+.chat-room > .chat-list > .no-chat-list {
+    text-align: center;
+    color: #acacac;
 }
 /* .chat-room > .chat-list > .chat > .new {
     background-color: #F24E1E;
